@@ -1,9 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - VIDLY</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap-lumen.css" />
+    <link rel="stylesheet" href="/Content/site.css" />
 </head>
 <body>
-	@RenderBody()
+    @Html.Partial("_NavBar")
+		
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Vidly</p>
+        </footer>
+    </div>
+		
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>
